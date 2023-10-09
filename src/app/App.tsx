@@ -5,13 +5,12 @@ import { AppRouter } from "./providers/router";
 import { NavBar } from "widgests/NavBar";
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames("app", {}, [theme])}>
       <NavBar />
       <AppRouter />
-      <button onClick={toggleTheme}>Togglee</button>
     </div>
   );
 };
