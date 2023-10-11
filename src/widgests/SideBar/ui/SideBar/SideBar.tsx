@@ -1,29 +1,36 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import cls from "./SideBar.module.scss";
-import { useState } from "react";
-import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
-import { LangSwitcher } from "widgests/LangSwitcher";
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useState } from 'react';
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { LangSwitcher } from 'widgests/LangSwitcher';
+import { Button } from 'shared/ui/Button/Button';
+import cls from './SideBar.module.scss';
 
 interface SideBarProps {
-  className?: string;
+    className?: string;
 }
 
-export const SideBar = ({ className }: SideBarProps) => {
-  const [collapsed, setCollapsed] = useState(false);
-  const onToogle = () => {
-    setCollapsed((prev) => !prev);
-  };
-  return (
-    <div
-      className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [
-        className,
-      ])}
-    >
-      <button onClick={onToogle}>onToogle</button>
-      <div className={cls.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher className={cls.lang} />
-      </div>
-    </div>
-  );
+export const SideBar = ({
+    className,
+}: SideBarProps) => {
+    const [collapsed, setCollapsed] = useState(false);
+    const onToogle = () => {
+        setCollapsed((prev) => !prev);
+    };
+    return (
+        <div
+            className={classNames(
+                cls.SideBar,
+                { [cls.collapsed]: collapsed },
+                [className]
+            )}
+        >
+            <Button onClick={onToogle}>
+                onToogle
+            </Button>
+            <div className={cls.switchers}>
+                <ThemeSwitcher />
+                <LangSwitcher className={cls.lang} />
+            </div>
+        </div>
+    );
 };
