@@ -3,7 +3,7 @@ module.exports = {
     tabWidth: 4,
     semi: true,
     singleQuote: true,
-    // parser: 'flow',
+    parser: 'flow',
     printWidth: 80,
     // jsxSingleQuote: true,
     // arrowParens: 'always',
@@ -14,6 +14,13 @@ module.exports = {
             options: {
                 singleQuote: false,
                 printWidth: 200,
+            },
+        },
+        {
+            files: '*.json',
+            options: {
+                parser: 'json',
+                printWidth: 100,
             },
         },
     ],
