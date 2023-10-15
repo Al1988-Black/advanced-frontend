@@ -4,14 +4,17 @@ module.exports = {
     semi: true,
     singleQuote: true,
     parser: 'flow',
+    bracketSpacing: true,
+    bracketSameLine: false,
+    arrowParens: 'always',
     printWidth: 80,
-    // jsxSingleQuote: true,
-    // arrowParens: 'always',
-    // max-len: ['error', 140, 2],
+    jsxBracketSameLine: false,
+    // singleAttributePerLine: false,
     overrides: [
         {
             files: '*.scss',
             options: {
+                parser: 'scss',
                 singleQuote: false,
                 printWidth: 200,
             },
