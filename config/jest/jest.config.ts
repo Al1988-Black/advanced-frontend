@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
+
 // import type { Config } from 'jest';
 
 export default {
@@ -19,23 +21,22 @@ export default {
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
-    moduleFileExtensions: [
-        'js',
-        'mjs',
-        'cjs',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
-    ],
-    moduleDirectories: ['node_modules'],
+    moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
+    moduleDirectories: ['node_modules', 'src'],
+
     testMatch: [
         // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
 
     rootDir: '../../',
+
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+
+    moduleNameMapper: {
+        '\\.s?css$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    },
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
