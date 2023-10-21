@@ -26,5 +26,13 @@ module.exports = {
                 printWidth: 100,
             },
         },
+        {
+            files: '*.stories.tsx',
+            options: {
+                tabWidth: 4,
+                semi: true,
+                singleQuote: true,
+            },
+        },
     ],
 };
