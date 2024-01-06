@@ -17,11 +17,25 @@ export default {
     // The directory where Jest should store its cached dependency information
     // cacheDirectory: "C:\\Users\\alexblack\\AppData\\Local\\Temp\\jest",
 
+    // A set of global variables that need to be available in all test environments
+    globals: {
+        __IS_DEV__: true,
+    },
+
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
-    moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
+    moduleFileExtensions: [
+        'js',
+        'mjs',
+        'cjs',
+        'jsx',
+        'ts',
+        'tsx',
+        'json',
+        'node',
+    ],
     moduleDirectories: ['node_modules', 'src'],
 
     testMatch: [

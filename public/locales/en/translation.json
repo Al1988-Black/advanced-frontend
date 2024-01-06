@@ -8,5 +8,7 @@
     "Произошла непредвиденная ошибка": "An unexpected error occurred",
     "Обновить сраницу": "Reload Page",
     "новая ошибка": "New error",
+    "инкремент": "increment",
+    "декремент": "decrement",
     "Короткий язык": "En"
 }
