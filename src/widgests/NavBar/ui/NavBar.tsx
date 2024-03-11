@@ -1,10 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routerConfig/routerConfig';
 import { LoginModal } from 'features/AuthByUserName';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { getUserAuthData, userActions } from 'entities/User';
@@ -15,7 +13,7 @@ interface NavBarProps {
     className?: string;
 }
 
-export const NavBar = ({ className }: NavBarProps) => {
+export const NavBar = memo(({ className }: NavBarProps) => {
     const { t } = useTranslation();
 
     const authData = useSelector(getUserAuthData);
@@ -64,4 +62,4 @@ export const NavBar = ({ className }: NavBarProps) => {
             )}
         </div>
     );
-};
+});
