@@ -3,20 +3,26 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import { SideBarItemType } from 'widgests/SideBar/model/items';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { AppRoutes, RoutePath } from 'shared/config/routerConfig/routerConfig';
+import MainIcon from 'shared/assets/icons/main.svg';
 import cls from './SideBarItem.module.scss';
 
 interface SideBarItemProps {
-    item?: SideBarItemType;
+    item: SideBarItemType;
     collapsed: boolean;
 }
 
 export const SideBarItem = memo((props: SideBarItemProps) => {
     const { t } = useTranslation();
     const { item, collapsed } = props;
-    const { path, text, Icon } = item;
+    const {
+        path = RoutePath.main,
+        text = AppRoutes.MAIN,
+        Icon = MainIcon,
+    } = item;
     return (
         <AppLink
-            to={path}
+            to={path || AppRoutes.MAIN}
             theme={AppLinkTheme.SECONDARY}
             className={classNames(cls.item, { [cls.collapsed]: collapsed })}
         >

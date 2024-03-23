@@ -11,6 +11,8 @@
         "jsx": "react-jsx",
         // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
         "allowJs": true,
+        // Поле strict строгий режим typeScript
+        "strict": true,
         "moduleResolution": "Node",
         "baseUrl": ".",
         "paths": {
