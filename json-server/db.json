@@ -70,11 +70,11 @@
     "profile": {
         "firstname": "Эльза",
         "lastname": "Джин",
-        "age": 27,
-        "currency": "RUB",
-        "country": "Russia",
+        "age": 28,
+        "currency": "EURO",
+        "country": "Belarus",
         "city": "Penza",
         "username": "admin",
-        "avatart": "https://m.media-amazon.com/images/M/MV5BOGMyZmVkYTUtM2M3Mi00OWU4LWE5NWEtZGZiYmZjMmU4MjcwXkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_FMjpg_UX1000_.jpg"
+        "avatar": "https://m.media-amazon.com/images/M/MV5BOGMyZmVkYTUtM2M3Mi00OWU4LWE5NWEtZGZiYmZjMmU4MjcwXkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_FMjpg_UX1000_.jpg"
     }
 }

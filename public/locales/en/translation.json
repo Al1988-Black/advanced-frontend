@@ -11,6 +11,8 @@
     "инкремент": "increment",
     "декремент": "decrement",
     "Войти": "In",
+    "Укажите Валюту": "Specify currency",
+    "Укажите страну": "Specify country",
     "Форма авторизации": "Form auth",
     "Вы ввели неверный логин или пароль": "Uncorrect username or password",
     "Короткий язык": "En"

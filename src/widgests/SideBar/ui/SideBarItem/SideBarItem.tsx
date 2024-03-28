@@ -5,6 +5,8 @@ import { SideBarItemType } from 'widgests/SideBar/model/items';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRoutes, RoutePath } from 'shared/config/routerConfig/routerConfig';
 import MainIcon from 'shared/assets/icons/main.svg';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 import cls from './SideBarItem.module.scss';
 
 interface SideBarItemProps {
@@ -20,6 +22,11 @@ export const SideBarItem = memo((props: SideBarItemProps) => {
         text = AppRoutes.MAIN,
         Icon = MainIcon,
     } = item;
+
+    const isAuth = useSelector(getUserAuthData);
+    if (item.authOnly && !isAuth) {
+        return null;
+    }
     return (
         <AppLink
             to={path || AppRoutes.MAIN}
